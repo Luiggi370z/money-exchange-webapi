@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Belatrix.MoneyExchange.Data;
 using Belatrix.MoneyExchange.Model;
+using Belatrix.MoneyExchange.Model.Exceptions;
 using Belatrix.MoneyExchange.Server.Queries;
 using Newtonsoft.Json.Linq;
 
@@ -34,7 +34,7 @@ namespace Belatrix.MoneyExchange.Server
             if (existingRate != null)
                 return existingRate;
 
-             throw new Exception($"Currency conversion from '{currencyFrom}' to '{currencyTo}' was not found.");
+             throw new RateCurrencyNotFoundException(currencyFrom, currencyTo);
         }
 
         public RatesDto GetRatesDto(RatesRequestQuery query)

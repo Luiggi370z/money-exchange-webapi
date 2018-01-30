@@ -1,7 +1,9 @@
-﻿using System;
+﻿using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using Belatrix.MoneyExchange.Model;
 using Belatrix.MoneyExchange.Server;
+using Swashbuckle.Swagger.Annotations;
 
 namespace Belatrix.MoneyExchange.WebApi.Controllers
 {
@@ -17,12 +19,20 @@ namespace Belatrix.MoneyExchange.WebApi.Controllers
 
         [HttpGet]
         [Route("latest")]
-        public object GetRates([FromUri] RatesRequestQuery query)
+        [SwaggerResponse(HttpStatusCode.OK, type: typeof(RatesDto))]
+        [SwaggerResponse(HttpStatusCode.BadRequest)]
+        [SwaggerResponse(HttpStatusCode.NotFound, type: typeof(ResponseErrorModel))]
+        [SwaggerResponse(HttpStatusCode.InternalServerError)]
+        public HttpResponseMessage GetRates([FromUri] RatesRequestQuery query)
         {
             if (string.IsNullOrEmpty(query.Base))
-                throw new ArgumentNullException($"Parameter {query.Base} cannot be null", nameof(query.Base));
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, $"Parameter {nameof(query.Base)} is required.");
+            }
 
-            return _ratetRepository.GetRatesDto(query);
+            var results = _ratetRepository.GetRatesDto(query);
+
+            return Request.CreateResponse(HttpStatusCode.OK, results);
         }
     }
 }

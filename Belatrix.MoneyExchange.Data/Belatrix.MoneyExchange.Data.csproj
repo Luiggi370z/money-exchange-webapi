@@ -50,6 +50,7 @@
     <Compile Include="Configurations\EntityTypeConfigurationExtensions.cs" />
     <Compile Include="Configurations\RateConfiguration.cs" />
     <Compile Include="DatabaseSeed.cs" />
+    <Compile Include="DbEntityValidationExceptionExtensions.cs" />
     <Compile Include="IUnityOfWork.cs" />
     <Compile Include="MoneyExchangeContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

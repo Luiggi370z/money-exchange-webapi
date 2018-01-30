@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ResponseErrorModel.cs" />
+    <Compile Include="Exceptions\ModelErrorExtensions.cs" />
+    <Compile Include="Exceptions\RateCurrencyNotFoundException.cs" />
     <Compile Include="Rate.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

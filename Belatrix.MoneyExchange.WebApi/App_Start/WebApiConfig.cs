@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
+using Belatrix.MoneyExchange.WebApi.Filters;
 
 namespace Belatrix.MoneyExchange.WebApi
 {
@@ -10,6 +8,7 @@ namespace Belatrix.MoneyExchange.WebApi
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            config.Filters.Add(new CommonExceptionsFilterAttribute());
 
             // Web API routes
             config.MapHttpAttributeRoutes();

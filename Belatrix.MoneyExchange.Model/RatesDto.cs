@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Belatrix.MoneyExchange.Model
+﻿namespace Belatrix.MoneyExchange.Model
 {
    public  class RatesDto
     {

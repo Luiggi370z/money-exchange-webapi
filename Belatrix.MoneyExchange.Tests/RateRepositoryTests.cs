@@ -1,6 +1,7 @@
 ﻿using System;
 using Belatrix.MoneyExchange.Data;
 using Belatrix.MoneyExchange.Model;
+using Belatrix.MoneyExchange.Model.Exceptions;
 using Belatrix.MoneyExchange.Server;
 using Belatrix.MoneyExchange.Server.Queries;
 using Moq;
@@ -82,9 +83,9 @@ namespace Belatrix.MoneyExchange.Tests
                 Symbols = "YYY"
             };
             
-            var exception = Assert.Throws(typeof(Exception), () =>
+            var exception = Assert.Throws(typeof(RateCurrencyNotFoundException), () =>
                 RateRepository.GetRatesDto(request));
-            Assert.Equal(exception.Message, $"Currency conversion from '{request.Base}' to '{request.Symbols}' was not found.");
+            Assert.Equal(exception.Message, $"Currency conversion rate from '{request.Base}' to '{request.Symbols}' was not found.");
         }
 
         [Fact]
