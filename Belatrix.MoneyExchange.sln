@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Belatrix.MoneyExchange.Data", "Belatrix.MoneyExchange.Data\Belatrix.MoneyExchange.Data.csproj", "{9B98BCB2-2F81-4980-BD9F-C20E1016A2DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Belatrix.MoneyExchange.Model", "Belatrix.MoneyExchange.Model\Belatrix.MoneyExchange.Model.csproj", "{D6F5F011-00F3-49D3-B7F2-96735DBEAF8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Belatrix.MoneyExchange.Server", "Belatrix.MoneyExchange.Server\Belatrix.MoneyExchange.Server.csproj", "{ECC35199-D317-4F93-8E9D-37BDFF217EA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Belatrix.MoneyExchange.API", "Belatrix.MoneyExchange.API\Belatrix.MoneyExchange.API.csproj", "{BEF00C94-41D9-4EFA-95EB-A5BB33CED606}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Belatrix.MoneyExchange.WebApi", "Belatrix.MoneyExchange.WebApi\Belatrix.MoneyExchange.WebApi.csproj", "{889921E9-104F-41D3-902A-D0E9A4FF89F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B98BCB2-2F81-4980-BD9F-C20E1016A2DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B98BCB2-2F81-4980-BD9F-C20E1016A2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B98BCB2-2F81-4980-BD9F-C20E1016A2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B98BCB2-2F81-4980-BD9F-C20E1016A2DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6F5F011-00F3-49D3-B7F2-96735DBEAF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F5F011-00F3-49D3-B7F2-96735DBEAF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F5F011-00F3-49D3-B7F2-96735DBEAF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F5F011-00F3-49D3-B7F2-96735DBEAF8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECC35199-D317-4F93-8E9D-37BDFF217EA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECC35199-D317-4F93-8E9D-37BDFF217EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECC35199-D317-4F93-8E9D-37BDFF217EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECC35199-D317-4F93-8E9D-37BDFF217EA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEF00C94-41D9-4EFA-95EB-A5BB33CED606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEF00C94-41D9-4EFA-95EB-A5BB33CED606}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEF00C94-41D9-4EFA-95EB-A5BB33CED606}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEF00C94-41D9-4EFA-95EB-A5BB33CED606}.Release|Any CPU.Build.0 = Release|Any CPU
+		{889921E9-104F-41D3-902A-D0E9A4FF89F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{889921E9-104F-41D3-902A-D0E9A4FF89F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{889921E9-104F-41D3-902A-D0E9A4FF89F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{889921E9-104F-41D3-902A-D0E9A4FF89F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
