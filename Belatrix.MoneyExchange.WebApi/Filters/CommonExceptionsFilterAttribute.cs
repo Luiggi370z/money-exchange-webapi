@@ -14,27 +14,22 @@ namespace Belatrix.MoneyExchange.WebApi.Filters
         {
             var exception = actionExecutedContext.Exception;
 
-            var validationException = exception as DbEntityValidationException;
-            if (validationException != null)
+            switch (exception)
             {
-                actionExecutedContext.Response = new HttpResponseMessage(HttpStatusCode.BadRequest)
-                {
-                    Content = new StringContent(validationException.ToMessage()),
-                };
-            }
-
-            var aggregateException = exception as AggregateException;
-            if (aggregateException != null && aggregateException.InnerExceptions.Count == 1)
-            {
-                actionExecutedContext.Exception = aggregateException.InnerExceptions[0];
-            }
-
-            var rateCurrencyNotFoundException = exception as RateCurrencyNotFoundException;
-            if (rateCurrencyNotFoundException != null)
-            {
-                actionExecutedContext.Response =
-                    actionExecutedContext.Request.CreateResponse(HttpStatusCode.NotFound,
-                        exception.Message.ToRequestErrorModel(nameof(RateCurrencyNotFoundException)));
+                case DbEntityValidationException validationException:
+                    actionExecutedContext.Response = new HttpResponseMessage(HttpStatusCode.BadRequest)
+                    {
+                        Content = new StringContent(validationException.ToMessage()),
+                    };
+                    break;
+                case AggregateException aggregateException when aggregateException.InnerExceptions.Count == 1:
+                    actionExecutedContext.Exception = aggregateException.InnerExceptions[0];
+                    break;
+                case RateCurrencyNotFoundException rateCurrencyNotFoundException:
+                    actionExecutedContext.Response =
+                        actionExecutedContext.Request.CreateResponse(HttpStatusCode.NotFound,
+                            exception.Message.ToRequestErrorModel(nameof(RateCurrencyNotFoundException)));
+                    break;
             }
         }
     }
