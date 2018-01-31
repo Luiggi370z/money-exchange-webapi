@@ -17,6 +17,16 @@ namespace Belatrix.MoneyExchange.Data.Configurations
                 new IndexAnnotation(new IndexAttribute(indexName) { IsUnique = false }));
         }
 
+        public static PrimitivePropertyConfiguration HasIndex(
+            this PrimitivePropertyConfiguration configuration,
+            string indexName,
+            int order)
+        {
+            return configuration.HasColumnAnnotation(
+                Index,
+                new IndexAnnotation(new IndexAttribute(indexName, order) { IsUnique = false }));
+        }
+
         public static PrimitivePropertyConfiguration HasUniqueIndex(
             this PrimitivePropertyConfiguration configuration,
             string indexName)

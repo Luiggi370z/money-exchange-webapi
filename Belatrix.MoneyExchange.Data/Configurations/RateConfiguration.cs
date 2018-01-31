@@ -11,15 +11,13 @@ namespace Belatrix.MoneyExchange.Data.Configurations
 
             Property(e => e.CurrencyFrom)
                 .IsRequired()
-                .HasMaxLength(3);
+                .HasMaxLength(3)
+                .HasIndex("IX_RateCurrency_From_To", 1);
 
             Property(e => e.CurrencyTo)
                 .IsRequired()
-                .HasMaxLength(3);
-
-            //Property(e => e.CurrencyFrom)
-            //    .IsRequired()
-            //    .HasUniqueIndex("IX_Rate_From_To");
+                .HasMaxLength(3)
+                .HasIndex("IX_RateCurrency_From_To", 2);
 
             Property(e => e.Value)
                 .IsRequired();
