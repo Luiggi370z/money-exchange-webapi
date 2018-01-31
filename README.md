@@ -19,7 +19,9 @@ git clone --depth 1 https://github.com/Luiggi370z/money-exchange-angular2.git
 ```
 
 
-A browser will appeared with the default Swagger page to try and inspect the endpoints or go to [http://localhost:52479/swagger/ui/index](http://localhost:52479/swagger/ui/index) in your browser
+A browser will appeared with the default Swagger page to try and inspect the endpoints or go to [http://localhost:52479/swagger/ui/index](http://localhost:52479/swagger/ui/index) in your browser.
+
+> Click on Rates and try it!!.
 
 # Table of Contents
 * [Stack](#stack)
